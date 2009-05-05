@@ -109,7 +109,7 @@ $scribe->log_message(level => 0, message => $message1 );
 ok(@{$scribe->{_retry_buffer}} == 0, 'Retry plan a discard: discarded');
 
 $scribe->{retry_plan_a} = 'wait_count';
-time_atmost( sub { $scribe->log_message(level => 0, message => $message1 ); }, 3, 'Retry plan a wait_count: timeout');
+time_atmost( sub { $scribe->log_message(level => 0, message => $message1 ); }, 4, 'Retry plan a wait_count: timeout');
 {
     local $SIG{ALRM} = sub { $transport_ok = 1 };
     alarm 1;
@@ -129,7 +129,7 @@ time_atmost(sub {
     ok($alarmed && $no_messages, 'Retry plan a wait_forever: waiting');
     is(scalar @messages, 1, 'Retry plan a wait_forever: recovery');
     
-}, 5, 'Retry plan a wait_forever completion');
+}, 6, 'Retry plan a wait_forever completion');
 
 
 

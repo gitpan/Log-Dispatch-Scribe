@@ -1,5 +1,6 @@
 .cvsignore
 Changes
+bin/scribe_cat.pl
 lib/Log/Dispatch/Scribe.pm
 Makefile.PL
 MANIFEST
