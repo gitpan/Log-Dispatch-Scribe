@@ -17,6 +17,7 @@ WriteMakefile(
         'Test::MockObject' => 0,
 	'Log::Dispatch' => 2.00,
     },
+    INSTALLDIRS         => 'site',
     EXE_FILES           => [ 'bin/scribe_cat.pl' ],
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'Log-Dispatch-Scribe-*' },

@@ -3,7 +3,7 @@ package Log::Dispatch::Scribe;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.04';
 
 use Log::Dispatch 2.00;
 use base qw(Log::Dispatch::Output);
@@ -126,13 +126,6 @@ sub DESTROY {
 
 Log::Dispatch::Scribe - Logging via Facebook's Scribe server software
 
-=head1 VERSION
-
-Version 0.01
-
-=cut
-
-
 =head1 SYNOPSIS
 
   use Log::Dispatch::Scribe;
@@ -147,8 +140,8 @@ Version 0.01
       retry_plan_b => 'die',
   );
 
-  $log->log(level => 'emergency', messsage => 'something BAD happened');
-  $log->log(category => 'system', level => 'emergency', messsage => 'something BAD happened');
+  $log->log(level => 'emergency', message => 'something BAD happened');
+  $log->log(category => 'system', level => 'emergency', message => 'something BAD happened');
 
   # Or, via Log::Log4perl (using YAML style configuration in this example):
 
@@ -159,6 +152,13 @@ Version 0.01
   log4perl.appender.Scribe.category: system
   log4perl.appender.Scribe.layout: Log::Log4perl::Layout::PatternLayout
   log4perl.appender.Scribe.layout.ConversionPattern: "[%d] [%p] %m%n"
+
+  use Log::Log4perl;
+  Log::Log4perl->init('log4perlconfig.yml'); # initialise using config file
+
+  $log = Log::Log4perl->get_logger('example.usage');
+  $log->info("..."); # Log an info message via Log::Log4perl
+  $log->log($INFO, "..."); # alternative syntax
 
 =head1 DESCRIPTION
 
@@ -348,11 +348,7 @@ Jon Schutz, C<< <jon at jschutz.net> >>
 
 =head1 BUGS
 
-Please report any bugs or feature requests to C<bug-log-logdispatch-scribe at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Log-Dispatch-Scribe>.  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
-
-
+Please report any bugs or feature requests to C<bug-log-dispatch-scribe at rt.cpan.org>, or through the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Log-Dispatch-Scribe>.  I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
 
 
 =head1 SUPPORT

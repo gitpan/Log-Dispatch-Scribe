@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                Log-Dispatch-Scribe
-version:             0.02
+version:             0.04
 abstract:            Logging via Facebook's Scribe server software
 license:             perl
 author:              
