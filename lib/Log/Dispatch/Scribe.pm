@@ -3,7 +3,7 @@ package Log::Dispatch::Scribe;
 use strict;
 use warnings;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use Log::Dispatch 2.00;
 use base qw(Log::Dispatch::Output);
@@ -334,17 +334,19 @@ above under L</Scribe Categories>.
 
 =item * L<http://notes.jschutz.net/109/perl/perl-client-for-facebooks-scribe-logging-software>
 
-=item * L<http://developers.facebook.com/scribe/>
+=item * L<http://github.com/facebook/scribe/>
 
 =item * L<Log::LogDispatch>
 
 =item * L<Log::Log4perl>
 
+=item * L<File::Tail::Scribe>, L<tail_to_scribe.pl>
+
 =back
 
 =head1 AUTHOR
 
-Jon Schutz, C<< <jon at jschutz.net> >>
+Jon Schutz, C<< <jon at jschutz.net> >>, L<http://notes.jschutz.net>
 
 =head1 BUGS
 

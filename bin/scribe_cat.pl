@@ -5,6 +5,7 @@ use warnings;
 
 use Getopt::Long;
 use Log::Dispatch::Scribe;
+use Pod::Usage;
 
 my @cat_re;
 my %args = (
@@ -31,7 +32,10 @@ GetOptions(\%args,
 	   'retry-count=i',
 	   'retry-delay=i',
 	   'debug:s',
-    );
+	   "help|?",
+    ) or pod2usage(-exitval => 2, -verbose => 0);
+
+pod2usage(-exitval => 0, -verbose => 2) if $args{'help'};
 
 my $dbg_file;
 my $debug;
@@ -175,13 +179,13 @@ Enable debugging to standard error or to file.
 
 =head1 SEE ALSO
 
-L<Log::Dispatch::Scribe>
+L<Log::Dispatch::Scribe>, L<File::Tail::Scribe>
 
 Apache httpd piped log documentation, L<http://httpd.apache.org/docs/2.2/logs.html#piped>
 
 =head1 AUTHOR
 
-Jon Schutz, C<< <jon at jschutz.net> >>
+Jon Schutz, C<< <jon at jschutz.net> >> L<http://notes.jschutz.net>
 
 =head1 BUGS
 

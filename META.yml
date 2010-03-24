@@ -1,14 +1,16 @@
 --- #YAML:1.0
 name:                Log-Dispatch-Scribe
-version:             0.04
+version:             0.05
 abstract:            Logging via Facebook's Scribe server software
 license:             perl
 author:              
-    - Jon Schutz <jon@jschutz.net>
+    - Jon Schutz <jon at jschutz.net>
 generated_by:        ExtUtils::MakeMaker version 6.42
 distribution_type:   module
 requires:     
+    Getopt::Long:                  0
     Log::Dispatch:                 2
+    Pod::Usage:                    0
     Test::MockObject:              0
     Test::More:                    0
     Test::Timer:                   0
